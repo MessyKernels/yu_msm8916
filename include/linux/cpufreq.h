@@ -440,13 +440,37 @@ extern struct cpufreq_governor cpufreq_gov_intellidemand;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_intellidemand)
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_DARKNESS)
 extern struct cpufreq_governor cpufreq_gov_darkness;
+<<<<<<< HEAD
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_darkness)
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SMARTMAX)
 extern struct cpufreq_governor cpufreq_gov_smartmax;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_smartmax)
+=======
+#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_darkness)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_WHEATLEY)
+extern struct cpufreq_governor cpufreq_gov_wheatley;
+#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_wheatley)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_HYPER)
+extern struct cpufreq_governor cpufreq_gov_hyper;
+#define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_hyper)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BLU_ACTIVE)
+extern struct cpufreq_governor cpufreq_gov_blu_active;
+#define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_blu_active)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_PEGASUSQ)
+extern struct cpufreq_governor cpufreq_gov_pegasusq;
+#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_pegasusq)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_ELEMENTALX)
+extern struct cpufreq_governor cpufreq_gov_elementalx;
+#define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_elementalx)
+#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_blu_active)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BIOSHOCK)
+extern struct cpufreq_governor cpufreq_gov_bioshock;
+#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_bioshock)
+>>>>>>> 37e32ae... BioShock (CPU Governor)
 #endif
 
 /*********************************************************************
+
  *                     FREQUENCY TABLE HELPERS                       *
  *********************************************************************/
 
