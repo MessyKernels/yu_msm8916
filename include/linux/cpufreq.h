@@ -453,6 +453,7 @@ extern struct cpufreq_governor cpufreq_gov_conservative;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_INTERACTIVE)
 extern struct cpufreq_governor cpufreq_gov_interactive;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_interactive)
+<<<<<<< HEAD
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND)
 extern struct cpufreq_governor cpufreq_gov_intellidemand;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_intellidemand)
@@ -497,6 +498,11 @@ extern struct cpufreq_governor cpufreq_gov_blu_active;
 >>>>>>> e6bf6c8... Add Blu_Active Governor
 =======
 >>>>>>> 254fe63... Add Wheatley Governot
+=======
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_ALUCARD)
+extern struct cpufreq_governor cpufreq_gov_alucard;
+#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_alucard)
+>>>>>>> fb44d58... Add Alucard Governor
 #endif
 
 /*********************************************************************
