@@ -453,6 +453,7 @@ extern struct cpufreq_governor cpufreq_gov_wheatley;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_HYPER)
 extern struct cpufreq_governor cpufreq_gov_hyper;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_hyper)
+<<<<<<< HEAD
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BLU_ACTIVE)
 extern struct cpufreq_governor cpufreq_gov_blu_active;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_blu_active)
@@ -467,6 +468,8 @@ extern struct cpufreq_governor cpufreq_gov_elementalx;
 extern struct cpufreq_governor cpufreq_gov_bioshock;
 #define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_bioshock)
 >>>>>>> 37e32ae... BioShock (CPU Governor)
+=======
+>>>>>>> 9377d21... Add Hyper Governor
 #endif
 
 /*********************************************************************
