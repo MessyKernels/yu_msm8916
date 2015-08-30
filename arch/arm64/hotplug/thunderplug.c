@@ -29,6 +29,43 @@ static int device_cpus = 8;
 #define DRIVER_VERSION  1
 #define DRIVER_SUBVER 5
 
+#define CPU_LOAD_THRESHOLD        (65)
+
+#define DEF_SAMPLING_MS			(500)
+#define MIN_CPU_UP_TIME			(750)
+
+static int now[8], last_time[8];
+
+static int sampling_time = DEF_SAMPLING_MS;
+static int load_threshold = CPU_LOAD_THRESHOLD;
+
+static int tplug_hp_enabled = 0;
+
+static int touch_boost_enabled = 0;
+
+static struct workqueue_struct *tplug_wq;
+static struct delayed_work tplug_work;
+
+static struct workqueue_struct *tplug_boost_wq;
+static struct delayed_work tplug_boost;
+
+static struct workqueue_struct *tplug_resume_wq;
+static struct delayed_work tplug_resume_work;
+
+static unsigned int last_load[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+struct cpu_load_data {
+	u64 prev_cpu_idle;
+	u64 prev_cpu_wall;
+	unsigned int avg_load_maxfreq;
+	unsigned int cur_load_maxfreq;
+	unsigned int samples;
+	unsigned int window_size;
+	cpumask_var_t related_cpus;
+};
+
+static DEFINE_PER_CPU(struct cpu_load_data, cpuload);
+
 static inline void offline_cpus(void)
 {
 	unsigned int cpu;
