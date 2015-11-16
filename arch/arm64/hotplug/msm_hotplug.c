@@ -996,7 +996,11 @@ static ssize_t store_history_size(struct device *dev,
 	if (hotplug.msm_enabled) {
 		flush_workqueue(hotplug_wq);
 		cancel_delayed_work_sync(&hotplug_work);
+<<<<<<< HEAD
 		memset(stats.load_hist, 0, sizeof(stats.load_hist));
+=======
+		memset(stats.load_hist, 0, (int)sizeof(stats.load_hist));
+>>>>>>> b37ff17... Added support for MSM and mP-Decision (Bricked) HotPlugs
 	}
 
 	stats.hist_size = val;
@@ -1336,3 +1340,7 @@ module_exit(msm_hotplug_exit);
 MODULE_AUTHOR("Pranav Vashi <neobuddy89@gmail.com>");
 MODULE_DESCRIPTION("MSM Hotplug Driver");
 MODULE_LICENSE("GPLv2");
+<<<<<<< HEAD
+=======
+
+>>>>>>> b37ff17... Added support for MSM and mP-Decision (Bricked) HotPlugs
