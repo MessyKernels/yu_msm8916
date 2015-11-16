@@ -136,6 +136,11 @@ abort_resume:
 	mutex_unlock(&power_suspend_lock);
 }
 
+<<<<<<< HEAD
+=======
+bool power_suspended = false;
+
+>>>>>>> 71a77c1... Added support for Adreno IDLER
 void set_power_suspend_state(int new_state)
 {
 	unsigned long irqflags;
@@ -146,13 +151,22 @@ void set_power_suspend_state(int new_state)
 		pr_info("[POWERSUSPEND] state activated.\n");
 		#endif
 		state = new_state;
+<<<<<<< HEAD
+=======
+                power_suspended = true;
+>>>>>>> 71a77c1... Added support for Adreno IDLER
 		queue_work(suspend_work_queue, &power_suspend_work);
 	} else if (state == POWER_SUSPEND_ACTIVE && new_state == POWER_SUSPEND_INACTIVE) {
 		#ifdef POWER_SUSPEND_DEBUG
 		pr_info("[POWERSUSPEND] state deactivated.\n");
 		#endif
 		state = new_state;
+<<<<<<< HEAD
 		queue_work(suspend_work_queue, &power_resume_work);
+=======
+                power_suspended = false;	
+          	queue_work(suspend_work_queue, &power_resume_work);
+>>>>>>> 71a77c1... Added support for Adreno IDLER
 	}
 	spin_unlock_irqrestore(&state_lock, irqflags);
 }
@@ -322,3 +336,7 @@ MODULE_DESCRIPTION("power_suspend - A replacement kernel PM driver for"
         "Android's deprecated early_suspend/late_resume PM driver!");
 MODULE_LICENSE("GPL v2");
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 71a77c1... Added support for Adreno IDLER
