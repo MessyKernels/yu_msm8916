@@ -68,5 +68,9 @@ obj-$(CONFIG_MSM_ADSPRPC)       += adsprpc_compat.o
 endif
 obj-$(CONFIG_MSM_RDBG)       += rdbg.o
 obj-$(CONFIG_MSM_SMD_PKT)       += msm_smd_pkt.o
+<<<<<<< HEAD
 
 obj-$(CONFIG_FRANDOM)		+= frandom.o
+=======
+obj-$(CONFIG_FRANDOM)	+= frandom.o
+>>>>>>> a647866... Added support for Frandom RNG Driver
