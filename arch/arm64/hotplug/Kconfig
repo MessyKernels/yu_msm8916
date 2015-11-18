@@ -84,3 +84,22 @@ config MSM_SLEEPER
  	help
  	  CPU hotplug driver
 
+config INTELLI_PLUG
+ 	bool "Hotplug for Razor Reborn"
+ 	depends on MSM_RUN_QUEUE_STATS
+ 	default y
+ 	help
+ 	  This enables kernel based multi core control.
+
+config ASMP
+ bool "Multi-core automatic hotplug support"
+ depends on SMP
+ default n
+ help
+   Automatically hotplugs the multiple cpu cores on and off based on cpu load and suspend state
+
+config CLUSTER_PLUG
+ bool "Enable cluster-plug cpu hotplug driver"
+ default n
+ help
+   CPU hotplug driver designed for ARM big.LITTLE systems where both the big and little CPUs are of the same type. On these systems, it preferable to normall use the big cluster, and only activate the little cluster for highly parallel loads. This hotplug implementation always keeps the big cluster online, and only activates the little cluster for heavy parallel loads.
