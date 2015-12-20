@@ -70,7 +70,8 @@ static const unsigned freqs[] = { 400000, 300000, 200000, 100000 };
  * So we allow it it to be disabled.
  */
 
-bool use_spi_crc = 0;
+bool use_spi_crc;
+
 module_param(use_spi_crc, bool, 0644);
 
 /*

@@ -89,7 +89,7 @@ cp $KERNEL_DIR/arch/arm64/boot/dt.img  $OUT_DIR/tools
 mv $OUT_DIR/tools/Image $OUT_DIR/tools/zImage
 cp $MODULES_DIR/*.ko $OUT_DIR/system/lib/modules/
 cd $OUT_DIR
-zip -r echo AuthorityKernel_UBTC-ver.zip *
+zip -r echo "AuthorityKernel_UBTC-ver.zip" *
 mv   *.zip $ZIP_MOVE
 cd $KERNEL_DIR
 
