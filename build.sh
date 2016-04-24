@@ -31,9 +31,9 @@ export SUBARCH=arm64
 export KBUILD_BUILD_USER="AayushRd7"
 export KBUILD_BUILD_HOST="AutHoRiTy-PoWeR"
 STRIP="/home/aayushrd7/UBERTC-aarch64-linux-android-5.3-kernel-1144fd2773c1/bin/aarch64-linux-android-strip"
-MODULES_DIR=/home/aayushrd7/Authority_Kernel_msm8939/common
+MODULES_DIR=/home/aayushrd7/yu_msm8916/common
 RESOURCE_DIR="/home/aayushrd7/yu_msm8916"
-OUT_DIR=/home/aayushrd7/Authority_Kernel_msm8939/Tomato
+OUT_DIR=/home/aayushrd7/yu_msm8916/Tomato
 ZIP_MOVE="$RESOURCE_DIR/output"
 
 
@@ -96,7 +96,7 @@ cp $KERNEL_DIR/arch/arm64/boot/dt.img  $OUT_DIR/tools
 mv $OUT_DIR/tools/Image $OUT_DIR/tools/zImage
 cp $MODULES_DIR/*.ko $OUT_DIR/system/lib/modules/
 cd $OUT_DIR
-zip -r echo $AuthorityKernel_UBTC_VER`.zip *
+zip -r echo $AuthorityKernel_UBTC.zip *
 mv   *.zip $ZIP_MOVE
 cd $KERNEL_DIR
 
