@@ -13,7 +13,9 @@
 *.o
 *.o.*
 *.a
+*.img
 *.s
+*.zip
 *.ko
 *.so
 *.so.dbg
@@ -32,7 +34,8 @@ modules.builtin
 *.lzo
 *.patch
 *.gcno
-
+Image
+cyanogenmod_tomato-64_defconfig
 #
 # Top-level generic files
 #
