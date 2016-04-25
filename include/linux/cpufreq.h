@@ -224,12 +224,9 @@ struct cpufreq_driver {
 
 	/* optional */
 	int	(*bios_limit)	(int cpu, unsigned int *limit);
-<<<<<<< HEAD
+
 unsigned int (*getavg) (struct cpufreq_policy *policy, unsigned int cpu);
-=======
-     unsigned int (*getavg) (struct cpufreq_policy *policy,
-                         unsigned int cpu);
->>>>>>> 254fe63... Add Wheatley Governot
+
 	int	(*exit)		(struct cpufreq_policy *policy);
 	int	(*suspend)	(struct cpufreq_policy *policy);
 	int	(*resume)	(struct cpufreq_policy *policy);
@@ -266,12 +263,8 @@ int cpufreq_unregister_driver(struct cpufreq_driver *driver_data);
 
 const char *cpufreq_get_current_driver(void);
 
-<<<<<<< HEAD
+
 void cpufreq_notify_utilization(struct cpufreq_policy *policy, unsigned int load);
-=======
-void cpufreq_notify_utilization(struct cpufreq_policy *policy,
-               unsigned int load);
->>>>>>> 254fe63... Add Wheatley Governot
 
 static inline void cpufreq_verify_within_limits(struct cpufreq_policy *policy,
 		unsigned int min, unsigned int max)
@@ -414,18 +407,10 @@ struct cpufreq_governor {
 
 /* Pass a target to the cpufreq driver */
 int cpufreq_driver_target(struct cpufreq_policy *policy,
-				 unsigned int target_freq,
-				 unsigned int relation);
-int __cpufreq_driver_target(struct cpufreq_policy *policy,
-				   unsigned int target_freq,
-				   unsigned int relation);
-<<<<<<< HEAD
-extern int __cpufreq_driver_getavg(struct cpufreq_policy *policy, unsigned int cpu);
-=======
+				 unsigned int target_freq,unsigned int relation);
+
 extern int __cpufreq_driver_getavg(struct cpufreq_policy *policy,
                                    unsigned int cpu); 
->>>>>>> 254fe63... Add Wheatley Governot
-int cpufreq_register_governor(struct cpufreq_governor *governor);
 void cpufreq_unregister_governor(struct cpufreq_governor *governor);
 
 /* CPUFREQ DEFAULT GOVERNOR */
@@ -438,71 +423,67 @@ extern struct cpufreq_governor cpufreq_gov_performance;
 #endif
 #ifdef CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_performance)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_POWERSAVE)
 extern struct cpufreq_governor cpufreq_gov_powersave;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_powersave)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE)
 extern struct cpufreq_governor cpufreq_gov_userspace;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_userspace)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND)
 extern struct cpufreq_governor cpufreq_gov_ondemand;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_ondemand)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_CONSERVATIVE)
 extern struct cpufreq_governor cpufreq_gov_conservative;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_conservative)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_INTERACTIVE)
 extern struct cpufreq_governor cpufreq_gov_interactive;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_interactive)
-<<<<<<< HEAD
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND)
 extern struct cpufreq_governor cpufreq_gov_intellidemand;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_intellidemand)
-#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_DARKNESS)
+
 extern struct cpufreq_governor cpufreq_gov_darkness;
-<<<<<<< HEAD
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_darkness)
+#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_darkness)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SMARTMAX)
 extern struct cpufreq_governor cpufreq_gov_smartmax;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_smartmax)
-=======
-#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_darkness)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_WHEATLEY)
 extern struct cpufreq_governor cpufreq_gov_wheatley;
 #define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_wheatley)
-<<<<<<< HEAD
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_HYPER)
 extern struct cpufreq_governor cpufreq_gov_hyper;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_hyper)
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BLU_ACTIVE)
 extern struct cpufreq_governor cpufreq_gov_blu_active;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_blu_active)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_PEGASUSQ)
 extern struct cpufreq_governor cpufreq_gov_pegasusq;
 #define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_pegasusq)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_ELEMENTALX)
 extern struct cpufreq_governor cpufreq_gov_elementalx;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_elementalx)
-#define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_blu_active)
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BIOSHOCK)
 extern struct cpufreq_governor cpufreq_gov_bioshock;
 #define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_bioshock)
->>>>>>> 37e32ae... BioShock (CPU Governor)
-=======
->>>>>>> 9377d21... Add Hyper Governor
-=======
-#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_BLU_ACTIVE)
-extern struct cpufreq_governor cpufreq_gov_blu_active;
-#define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_blu_active)
->>>>>>> e6bf6c8... Add Blu_Active Governor
-=======
->>>>>>> 254fe63... Add Wheatley Governot
-=======
+
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_ALUCARD)
 extern struct cpufreq_governor cpufreq_gov_alucard;
 #define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_alucard)
->>>>>>> fb44d58... Add Alucard Governor
+
 #endif
 
 /*********************************************************************
