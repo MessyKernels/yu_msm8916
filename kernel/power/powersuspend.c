@@ -138,7 +138,6 @@ abort_resume:
 
 bool power_suspended = false;
 
->>>>>>> 71a77c1... Added support for Adreno IDLER
 void set_power_suspend_state(int new_state)
 {
 	unsigned long irqflags;
