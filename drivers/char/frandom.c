@@ -407,7 +407,3 @@ error0:
 
 module_init(frandom_init_module);
 module_exit(frandom_cleanup_module);
-<<<<<<< HEAD
-=======
-
->>>>>>> a647866... Added support for Frandom RNG Driver
