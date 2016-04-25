@@ -31,6 +31,7 @@
 #include <linux/io.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
+#include <linux/sysdev.h>
 #include <linux/interrupt.h>
 #include <linux/workqueue.h>
 #include <linux/irq.h>
