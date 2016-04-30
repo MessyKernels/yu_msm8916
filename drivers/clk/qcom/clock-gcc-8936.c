@@ -856,7 +856,8 @@ static struct rcg_clk gfx3d_clk_src = {
 
 		VDD_DIG_FMAX_MAP4(LOW, 50000000, NOMINAL, 310000000, NOMINAL_PLUS, 475000000, HIGH,
 			750000000),
-	},
+		CLK_INIT(gfx3d_clk_src.c),
+		},
 };
 
 static struct clk_freq_tbl ftbl_gcc_blsp1_qup1_6_i2c_apps_clk[] = {
