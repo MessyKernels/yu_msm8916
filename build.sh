@@ -34,13 +34,6 @@ STRIP="/home/aayushrd7/UBERTC-aarch64-linux-android-5.3-kernel-1144fd2773c1/bin/
 MODULES_DIR=/home/aayushrd7/yu_msm8916/common
 RESOURCE_DIR="/home/aayushrd7/yu_msm8916"
 OUT_DIR=/home/aayushrd7/yu_msm8916/Tomato
-ZIP_MOVE="$RESOURCE_DIR/output"
-
-
-
-BASE_VER="Authority"
-VER="-v3"
-Authority_VER="$BASE_VER$VER$TC"
 
 compile_kernel ()
 {
@@ -96,7 +89,7 @@ cp $KERNEL_DIR/arch/arm64/boot/dt.img  $OUT_DIR/tools
 mv $OUT_DIR/tools/Image $OUT_DIR/tools/zImage
 cp $MODULES_DIR/*.ko $OUT_DIR/system/lib/modules/
 cd $OUT_DIR
-zip -r echo $AuthorityKernel_UBTC.zip *
+zip -r echo AuthorityKernel_UBTC-ver.zip *
 mv   *.zip $ZIP_MOVE
 cd $KERNEL_DIR
 
