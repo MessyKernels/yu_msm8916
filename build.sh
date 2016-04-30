@@ -82,7 +82,7 @@ esac
 rm -rf $OUT_DIR/AuthorityKernel*.zip
 rm -rf $OUT_DIR/tools/*
 rm -rf $OUT_DIR/system/lib/modules/*
-cp -r $KERNEL_DIR/almighty/tools $OUT_DIR
+cp -r $KERNEL_DIR/Authority/tools $OUT_DIR
 cp $KERNEL_DIR/arch/arm64/boot/Image  $OUT_DIR/tools
 cp $KERNEL_DIR/arch/arm64/boot/dt.img  $OUT_DIR/tools
 mv $OUT_DIR/tools/Image $OUT_DIR/tools/zImage
