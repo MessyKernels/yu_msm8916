@@ -37,6 +37,7 @@ modules.builtin
 *.patch
 *.gcno
 Image
+zImage
 cyanogenmod_tomato-64_defconfig
 #
 # Top-level generic files
