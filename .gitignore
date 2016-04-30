@@ -17,6 +17,7 @@
 *.s
 *.zip
 output.zip
+output
 *.ko
 *.so
 *.so.dbg
