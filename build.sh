@@ -41,7 +41,7 @@ compile_kernel ()
 {
 echo -e "**********************************************************************************************"
 echo "                    "
-echo "                                        Compiling ALMIGHTY Kernel                    "
+echo "                                        Compiling AUTHORITY Kernel                    "
 echo "                    "
 echo -e "**********************************************************************************************"
 make cyanogenmod_tomato-64_defconfig
