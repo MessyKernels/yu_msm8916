@@ -85,7 +85,7 @@ rm -rf $OUT_DIR/system/lib/modules/*
 cp -r $KERNEL_DIR/Authority/tools $OUT_DIR
 cp $KERNEL_DIR/arch/arm64/boot/Image  $OUT_DIR/tools
 cp $KERNEL_DIR/arch/arm64/boot/dt.img  $OUT_DIR/tools
-mv $OUT_DIR/tools/Image $OUT_DIR/tools/zImage
+mv $OUT_DIR/tools/Image $OUT_DIR/tools/Image
 cp $MODULES_DIR/*.ko $OUT_DIR/system/lib/modules/
 cd $OUT_DIR
 zip -r AuthorityKernel_UBTC-v3.0-$(date +"%Y-%m-%d"-%H%M).zip *
