@@ -88,7 +88,7 @@ cp $KERNEL_DIR/arch/arm64/boot/dt.img  $OUT_DIR/tools
 mv $OUT_DIR/tools/Image $OUT_DIR/tools/Image
 cp $MODULES_DIR/*.ko $OUT_DIR/system/lib/modules/
 cd $OUT_DIR
-zip -r AuthorityKernel_UBTC-v3.0-$(date +"%Y-%m-%d"-%H%M).zip *
+zip -r AuthorityKernel_UBTC-v4.0-$(date +"%Y-%m-%d"-%H%M).zip *
 cd $KERNEL_DIR
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
@@ -96,6 +96,6 @@ echo -e "$yellow Build completed in $(($DIFF / 60)) minute(s) and $(($DIFF % 60)
 echo -e "**********************************************************************************************"
 echo "                    "
 echo "                                        Enjoy Authority Kernel                    "
-echo "                             AuthorityKernel-v3.0-$(date +"%Y-%m-%d"-%H%M).zip  " 
+echo "                             AuthorityKernel-v4.0-$(date +"%Y-%m-%d"-%H%M).zip  " 
 echo " "
 echo -e "**********************************************************************************************"
