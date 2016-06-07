@@ -25,7 +25,7 @@
 #include <linux/input.h>
 #include <linux/firmware.h>
 #include <linux/completion.h>
-#include <glink_private.h>
+#include "glink_private.h"
 #include <sound/soc.h>
 #include <sound/jack.h>
 #include "wcd-mbhc-v2.h"
