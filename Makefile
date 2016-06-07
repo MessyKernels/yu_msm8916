@@ -588,7 +588,7 @@ all: vmlinux
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -Os $(call cc-disable-warning,maybe-uninitialized,)
 else
-KBUILD_CFLAGS	+= -O3 -Ofast $(call cc-disable-warning,maybe-uninitialized,) -Wno-array-bounds
+KBUILD_CFLAGS	+= -O3
 KBUILD_CFLAGS += $(call cc-disable-warning,maybe-uninitialized)
 KBUILD_CFLAGS += $(call cc-disable-warning,array-bounds)
 endif
@@ -646,8 +646,6 @@ KBUILD_CFLAGS += $(call cc-disable-warning, unused-but-set-variable)
 KBUILD_CFLAGS	+= -fomit-frame-pointer
 # endif
 # endif
-
-KBUILD_CFLAGS   += $(call cc-option, -fno-var-tracking-assignments)
 
 KBUILD_CFLAGS   += $(call cc-option, -fno-var-tracking-assignments)
 
