@@ -485,7 +485,7 @@ static struct pll_clk a53ss_cci_pll = {
 static struct pll_freq_tbl apcs_c0_pll_freq[] = {
 	F_APCS_PLL( 998400000,  52, 0x0, 0x1, 0x0, 0x0, 0x0),
 	F_APCS_PLL(1113600000,  58, 0x0, 0x1, 0x0, 0x0, 0x0),
-	F_APCS_PLL(1209600000,  63, 0x0, 0x1, 0x0, 0x0, 0x0),
+	F_APCS_PLL(1200000000,  62, 0x0, 0x1, 0x0, 0x0, 0x0),
 };
 
 static struct pll_clk a53ss_c0_pll = {
@@ -529,6 +529,7 @@ static struct pll_freq_tbl apcs_c1_pll_freq[] = {
 	F_APCS_PLL( 998400000, 52, 0x0, 0x1, 0x0, 0x0, 0x0),
 	F_APCS_PLL(1036800000, 54, 0x0, 0x1, 0x0, 0x0, 0x0),
 	F_APCS_PLL(1113600000, 58, 0x0, 0x1, 0x0, 0x0, 0x0),
+	F_APCS_PLL(1200000000, 62, 0x0, 0x1, 0x0, 0x0, 0x0),
 	F_APCS_PLL(1209600000, 63, 0x0, 0x1, 0x0, 0x0, 0x0),
 	F_APCS_PLL(1190400000, 62, 0x0, 0x1, 0x0, 0x0, 0x0),
 	F_APCS_PLL(1267200000, 66, 0x0, 0x1, 0x0, 0x0, 0x0),
@@ -540,10 +541,10 @@ static struct pll_freq_tbl apcs_c1_pll_freq[] = {
 	F_APCS_PLL(1536000000, 80, 0x0, 0x1, 0x0, 0x0, 0x0),
 	F_APCS_PLL(1574400000, 82, 0x0, 0x1, 0x0, 0x0, 0x0),
 	F_APCS_PLL(1612800000, 84, 0x0, 0x1, 0x0, 0x0, 0x0),
-	F_APCS_PLL(1632000000, 85, 0x0, 0x1, 0x0, 0x0, 0x0),
-	F_APCS_PLL(1651200000, 86, 0x0, 0x1, 0x0, 0x0, 0x0),
-	F_APCS_PLL(1689600000, 88, 0x0, 0x1, 0x0, 0x0, 0x0),
-	F_APCS_PLL(1708800000, 89, 0x0, 0x1, 0x0, 0x0, 0x0),
+	F_APCS_PLL(1708800000, 85, 0x0, 0x1, 0x0, 0x0, 0x0),
+	F_APCS_PLL(1800000000, 86, 0x0, 0x1, 0x0, 0x0, 0x0),
+	F_APCS_PLL(1900000000, 88, 0x0, 0x1, 0x0, 0x0, 0x0),
+	F_APCS_PLL(2000000000, 89, 0x0, 0x1, 0x0, 0x0, 0x0),
 };
 
 static struct pll_clk a53ss_c1_pll = {
@@ -835,10 +836,12 @@ static struct clk_freq_tbl ftbl_gcc_oxili_gfx3d_clk[] = {
 	F( 200000000,      gpll0_out_main,   4,	  0,	0),
 	F( 220000000,      gpll3_out_main,   5,	  0,	0),
 	F( 266670000,      gpll0_out_main,   3,	  0,	0),
-	F( 310000000,	gpll2_gfx3d,	3,	  0,	0),
+	F( 310000000,	   gpll2_gfx3d,      3,	  0,	0),
 	F( 400000000,      gpll0_out_main,   2,	  0,	0),
-	F( 465000000,      gpll2_gfx3d,   2,    0,    0),
-	F( 550000000,      gpll3_out_main,   2,    0,    0),
+	F( 475000000,      gpll2_gfx3d,      2,   0,    0),
+	F( 550000000,      gpll3_out_main,   2,   0,    0),
+	F( 650000000,      gpll3_out_main,   2,   0,    0),
+	F( 750000000, 	   gpll3_out_main,   2,   0,    0),
 	F_END
 };
 
@@ -851,10 +854,11 @@ static struct rcg_clk gfx3d_clk_src = {
 	.c = {
 		.dbg_name = "gfx3d_clk_src",
 		.ops = &clk_ops_rcg,
-		VDD_DIG_FMAX_MAP4(LOW, 220000000, NOMINAL, 400000000, NOMINAL_PLUS, 465000000, HIGH,
-			550000000),
+
+		VDD_DIG_FMAX_MAP4(LOW, 50000000, NOMINAL, 310000000, NOMINAL_PLUS, 475000000, HIGH,
+			750000000),
 		CLK_INIT(gfx3d_clk_src.c),
-	},
+		},
 };
 
 static struct clk_freq_tbl ftbl_gcc_blsp1_qup1_6_i2c_apps_clk[] = {
