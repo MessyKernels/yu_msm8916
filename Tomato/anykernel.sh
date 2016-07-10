@@ -3,7 +3,7 @@
 
 ## AnyKernel setup
 # EDIFY properties
-kernel.string= Authority @ AayushRd7 
+kernel.string= Xeski @ AayushRd7 
 do.devicecheck=1
 do.initd=1
 do.modules=1
